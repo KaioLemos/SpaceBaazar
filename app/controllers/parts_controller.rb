@@ -3,11 +3,13 @@ class PartsController < ApplicationController
 
   def new
     @part = Part.new
+    authorize @part
   end
 
   def create
     @part = Part.new(part_params)
     @part.user = current_user
+    authorize @part
     if @part.save
       flash[:success] = "Yay! 🎉 you successfully created a part"
       redirect_to root_path
@@ -17,10 +19,11 @@ class PartsController < ApplicationController
   end
 
   def index
-    @parts = Part.all
+    @parts = policy_scope(Part)
   end
 
   def show
+    authorize @part
   end
 
   def edit
@@ -38,6 +41,7 @@ class PartsController < ApplicationController
   end
 
   def destroy
+    authorize @part
   end
 
   private
