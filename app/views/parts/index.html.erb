@@ -1,42 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <%# logo Stock Flow %>
-      <img src="../app/assets/images/logo.png">
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pages</a>
-          </li>
-          <li class="nav-item dropdown">
-            <%# mudar imagem do avatar abaixo ou excluir %>
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render "shared/navbar" %>
 
 <div class="card-trip-grid">
   <% Part.all.each do |part| %>
     <div class="card-trip">
       <%# imgame de parts %>
-      <img src="a.jpg" />
+      <% if part.photo.present? %>
+       <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag 'logo.png', height: 300, width: 400, crop: :fill %>
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <h2><%= part.name %></h2>
