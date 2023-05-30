@@ -14,6 +14,11 @@
       <li class="list-group-item"><strong>Years:</strong> <%= @part.years %></li>
       <li class="list-group-item"><strong>Description:</strong> <%= @part.description %></li>
       <li class="list-group-item"><strong>Price:</strong> <%= @part.price %></li>
+      <% if @part.completed %>
+        <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> <strong>Completed:</strong> Sold</li>
+      <% else %>
+        <li class="list-group-item"><i class="fas fa-times-circle text-danger"></i> <strong>Completed:</strong> Not sold</li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -27,4 +32,6 @@
 <div class="d-flex justify-content-center gap-3" >
   <p><%= link_to "back", root_path, class:'btn btn-primary btn-sm'%></p>
   <p><%= link_to "Edit", edit_part_path(@part), class:'btn btn-primary btn-sm'%></p>
+  <p><%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-primary btn-sm", remote: true %></p>
+
 </div>
