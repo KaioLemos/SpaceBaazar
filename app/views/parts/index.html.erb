@@ -1,0 +1,22 @@
+<%= render "shared/navbar" %>
+
+<div class="card-trip-grid">
+  <% Part.all.each do |part| %>
+    <div class="card-trip">
+      <%# imgame de parts %>
+      <% if part.photo.present? %>
+       <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag 'logo.png', height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= part.name %></h2>
+          <p><%= part.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">$<%= part.price %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <% end %>
+</div>
