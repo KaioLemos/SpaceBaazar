@@ -1,5 +1,24 @@
 <%= render "shared/navbar" %>
+
 <h1>Pages#home</h1>
+<% if flash[:success] %>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><%= flash[:success] %></span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>
 <p>Find me in app/views/pages/home.html.erb</p>
-
-
+ <%# #Example of image cards with cloudnary %>
+<% @parts = Part.all %>
+<% @parts.each do |part| %>
+  <div class="part">
+    <h2><%= part.name %></h2>
+    <% if part.photo.present? %>
+      <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag 'logo.png', height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+<% end %>

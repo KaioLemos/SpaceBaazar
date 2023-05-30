@@ -26,7 +26,7 @@ class PartsController < ApplicationController
     end
     private
     def part_params
-        params.require(:part).permit(:name, :category, :origin, :years, :description, :price)
+        params.require(:part).permit(:name, :category, :origin, :years, :description, :price, :photo)
     end
     def set_part
         @part = Part.find(params[:id])
