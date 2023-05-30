@@ -1,0 +1,47 @@
+<%= form_with(model: part, local: true) do |form| %>
+  <% if part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(part.errors.count, "error") %> prohibited this part from being saved:</h2>
+
+      <ul>
+        <% part.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, ['Rocket Engine', 'Navigation System', 'Fuel Tank', 'Communication Antenna', 'Life Support System', 'Hull Plating', 'Space Suits', 'Cargo Bay', 'Control Console', 'Thrusters'] %>
+  </div>
+
+<div class="field">
+  <%= form.label :origin %>
+  <%= form.select :origin, ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'] %>
+</div>
+
+  <div class="field">
+    <%= form.label :years %>
+    <%= form.number_field :years %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

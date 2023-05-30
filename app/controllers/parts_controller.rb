@@ -7,7 +7,8 @@ class PartsController < ApplicationController
         @part = Part.new(part_params)
         @part.user = current_user
         if @part.save
-            redirect_to part_path(@part)
+            flash[:success] = "Yay! 🎉 you successfully created a part"
+            redirect_to root_path
         else
             render :new
         end
