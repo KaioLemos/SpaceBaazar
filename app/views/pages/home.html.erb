@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-<h1>Pages#home</h1>
+<h1>Exemplo Lista imagens cloudnary</h1>
 <% if flash[:success] %>
   <div class="flash flash-success alert alert-dismissible fade show" role="alert">
     <span><%= flash[:success] %></span>
@@ -9,7 +9,6 @@
     </a>
   </div>
 <% end %>
-<p>Find me in app/views/pages/home.html.erb</p>
  <%# #Example of image cards with cloudnary %>
 <% @parts = Part.all %>
 <% @parts.each do |part| %>
@@ -22,3 +21,5 @@
     <% end %>
   </div>
 <% end %>
+
+
