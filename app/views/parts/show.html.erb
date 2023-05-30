@@ -1,0 +1,16 @@
+
+
+<h1 class='text-center'><%= @part.name %></h1>
+
+<div class="container p-5">
+  <ul>
+    <li><strong>Name:</strong> <%= @part.name %></li>
+    <li><strong>Category:</strong> <%= @part.category %></li>
+    <li><strong>Origin:</strong> <%= @part.origin %></li>
+    <li><strong>Years:</strong> <%= @part.years %></li>
+    <li><strong>Description:</strong> <%= @part.description %></li>
+    <li><strong>Price:</strong> <%= @part.price %></li>
+  </ul>
+  <p><%= link_to "back", root_path, class:'btn btn-secondary'%></p>
+
+</div>
