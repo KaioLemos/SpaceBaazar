@@ -8,7 +8,8 @@ class PartsController < ApplicationController
         @part = Part.new(part_params)
         @part.user = current_user
         if @part.save
-            redirect_to part_path(@part)
+            flash[:success] = "Yay! 🎉 you successfully created a part"
+            redirect_to root_path
         else
             render :new
         end
@@ -26,7 +27,7 @@ class PartsController < ApplicationController
     end
     private
     def part_params
-        params.require(:part).permit(:name, :category, :origin, :years, :description, :price)
+        params.require(:part).permit(:name, :category, :origin, :years, :description, :price, :photo)
     end
     def set_part
         @part = Part.find(params[:id])
