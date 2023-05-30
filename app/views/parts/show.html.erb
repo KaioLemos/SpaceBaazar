@@ -1,16 +1,22 @@
-
-
-<h1 class='text-center'><%= @part.name %></h1>
-
-<div class="container p-5">
-  <ul>
-    <li><strong>Name:</strong> <%= @part.name %></li>
-    <li><strong>Category:</strong> <%= @part.category %></li>
-    <li><strong>Origin:</strong> <%= @part.origin %></li>
-    <li><strong>Years:</strong> <%= @part.years %></li>
-    <li><strong>Description:</strong> <%= @part.description %></li>
-    <li><strong>Price:</strong> <%= @part.price %></li>
-  </ul>
-  <p><%= link_to "back", root_path, class:'btn btn-secondary'%></p>
-
+<%= render "shared/navbar" %>
+<div class="container  p-5 d-flex flex-row  justify-content-around">
+  <div class="card-product">
+    <%= cl_image_tag @part.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="card-product-infos">
+    <h2><%= @part.name %></h2>
+    <p>Product description:</p>
+      <ul>
+        <li><strong>Name:</strong> <%= @part.name %></li>
+        <li><strong>Category:</strong> <%= @part.category %></li>
+        <li><strong>Origin:</strong> <%= @part.origin %></li>
+        <li><strong>Years:</strong> <%= @part.years %></li>
+        <li><strong>Description:</strong> <%= @part.description %></li>
+        <li><strong>Price:</strong> <%= @part.price %></li>
+      </ul>
+  </div>
 </div>
+
+
+
+<p class="d-flex justify-content-center" ><%= link_to "back", root_path, class:'btn btn-secondary'%></p>

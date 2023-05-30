@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
     before_action :set_part, only: [:show, :edit, :update, :destroy]
-    
+
     def new
         @part = Part.new
     end
@@ -38,6 +38,6 @@ class PartsController < ApplicationController
     end
 
     def set_part
-        @part = Part.find(params[:id])
+        @part = Part.last
     end
 end
