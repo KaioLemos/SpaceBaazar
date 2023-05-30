@@ -33,6 +33,7 @@ class PartsController < ApplicationController
       redirect_to @part, notice: "Part was successfully updated"
     else
       render :edit, status: :unprocessable_entity
+      before_action :set_part, only: [:show, :edit, :update, :destroy]
     end
   end
 
