@@ -11,3 +11,10 @@
 @import "components/index";
 @import "pages/index";
 @import "components/flash";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
