@@ -38,3 +38,4 @@
     <%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-primary btn-sm", remote: true %>
   <% end %>
 </div>
+<%= render "shared/footer" %>
