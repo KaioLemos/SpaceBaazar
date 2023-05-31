@@ -43,7 +43,7 @@ SimpleForm.setup do |config|
     b.optional :minlength
 
     # Calculates pattern from format validations for string inputs
-    b.optional :pattern
+    b.optional :patternok
 
     # Calculates min and max from length validations for numeric inputs
     b.optional :min_max
