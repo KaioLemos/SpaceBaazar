@@ -1,23 +1,25 @@
-<%= render "shared/navbar" %>
 
-<div class="card-trip-grid">
-  <% @parts.each do |part| %>
-    <div class="card-trip">
-      <%# imgame de parts %>
-      <% if part.photo.present? %>
-       <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <%= image_tag 'logo.png', height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= part.name %></h2>
-          <p><%= part.description %></p>
+<%= render "shared/navbar" %>
+<div class="container mt-5 mb-5">
+  <div class="cards-wrapper">
+    <% @parts.each do |part| %>
+      <div class="card-listing">
+        <div class="card-product">
+          <% if part.photo.present? %>
+            <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag 'logo.png', height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <%= link_to "Details", @part, class: "btn btn-primary mt-3" %>
         </div>
-        <h2 class="card-trip-pricing">$<%= part.price %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <div class="card-product-infos">
+            <h2><%= part.name %></h2>
+            <span class="price">$ <%= part.price %></span>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>
