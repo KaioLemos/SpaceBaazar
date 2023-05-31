@@ -1,0 +1,24 @@
+<%= render "shared/navbar" %>
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Part</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.user.name %></td>
+        <td><%= order.part.name %></td>
+
+        <td>
+          <%= link_to "Show", part_path(order.part) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
