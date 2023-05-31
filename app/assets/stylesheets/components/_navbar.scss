@@ -1,9 +1,9 @@
 #header {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.container{
-  padding: 10px 10%;
-}
+// .container{
+//   padding: 10px 10%;
+// }
 
 .navbar-brand {
   width: 140px;
@@ -12,6 +12,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: rgb(0, 0, 0);
+  margin-bottom: 25px;
 }
 
 .navbar-lewagon .navbar-collapse {
