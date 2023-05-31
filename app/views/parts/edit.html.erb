@@ -1,0 +1,39 @@
+<%# <h1>Edit Part</h1> %>
+
+<%# <%= render 'form', part: @part %>
+
+<%# <%= link_to 'Back', parts_path %>
+
+<%= render "shared/navbar" %>
+<div class="container-fluid text-black p-5">
+  <div class="container mt-100 d-flex flex-row justify-content-around align-items-center">
+    <div class="card-product">
+      <%= simple_form_for @part do |f| %>
+        <%= f.input :photo, as: :file, class: "img-input"%>
+      <% end %>
+      <%= cl_image_tag @part.photo.key, height: 400, width: 600, crop: :fill %>
+    </div>
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h2 class="card-title">Editing <%= @part.name %></h2>
+        <p class="card-text">Product description: <%= @part.description %></p>
+        <ul class="list-group list-group-flush" > <%= simple_form_for @part do |f| %>
+          <li class="list-group-item"><strong>Name:</strong> <%= f.input :name, label: false%></li>
+          <li class="list-group-item"><strong>Category:</strong> <%= f.input :category, label: false, collection: ['Rocket Engine', 'Navigation System', 'Fuel Tank', 'Communication Antenna', 'Life Support System', 'Hull Plating', 'Space Suits', 'Cargo Bay', 'Control Console', 'Thrusters'] %></li>
+          <li class="list-group-item"><strong>Origin:</strong> <%= f.input :origin, label: false, collection: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'] %></li>
+          <li class="list-group-item"><strong>Years:</strong> <%= f.input :years, label: false %></li>
+          <li class="list-group-item"><strong>Description:</strong> <%= f.input :description, label: false %></li>
+          <li class="list-group-item"><strong>Price:</strong> <%= f.input :price, label: false %></li>
+        </ul> <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center gap-3 mt-3">
+    <p><%= link_to "Back", root_path, class: "btn btn-primary btn-sm" %></p>
+    <p><%= simple_form_for @part do |f| %>
+      <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+    </p> <% end %>
+
+    <%# <p><%= link_to "Edit", edit_part_path(@part), class: "btn btn-primary btn-sm" </p> %>
+  </div>
+</div>
