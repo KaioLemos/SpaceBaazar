@@ -17,7 +17,7 @@ class PartsController < ApplicationController
     end
 
     def index
-        @parts = Part.all
+        @parts = Part.where(completed: false)
     end
 
     def show
