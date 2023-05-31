@@ -1,6 +1,17 @@
+#header {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+  padding: 10px 10%;
+}
+
+.navbar-brand {
+  width: 140px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(0, 0, 0);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +20,34 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  margin: 10px 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav-link::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #6bc0c0cc;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.nav-link:hover::after{
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #fff;
 }
