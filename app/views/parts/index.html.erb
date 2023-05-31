@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 
 <div class="card-trip-grid">
-  <% Part.all.each do |part| %>
+  <% @parts.each do |part| %>
     <div class="card-trip">
       <%# imgame de parts %>
       <% if part.photo.present? %>
