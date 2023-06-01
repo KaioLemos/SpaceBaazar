@@ -16,13 +16,9 @@ class PartsController < ApplicationController
     end
   end
 
-  # def index
-  #   @parts = policy_scope(Part)
-  # end
-
-  def index
-    @parts = Part.where(completed: false)
-  end
+    def index
+      @parts = Part.where(completed: false)
+    end
 
   def show
 
