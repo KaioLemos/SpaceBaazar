@@ -4,7 +4,7 @@
     border-radius: 10px;
     width: 600px;
     height: 500px;
-    box-shadow: 10px 10px 10px #af21b9;
+    box-shadow: 0 0 15px #af21b9;
 }
 .card-show > img {
   height: 100%;
@@ -12,13 +12,14 @@
   object-fit: cover;
 }
 .card-show_body{
-  box-shadow: 10px 10px 10px #af21b9;
+  box-shadow: 0 0 15px #af21b9;
 }
 
 .card-description, .list-group-item, .card-body, .card-fundo-description{
 
   background: linear-gradient(to bottom, rgb(20, 19, 19), rgb(46, 23, 47));
   color: white;
+  border-radius: 10px;
 }
 .btn-show {
   color: rgb(9, 245, 36);
