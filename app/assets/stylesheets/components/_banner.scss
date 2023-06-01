@@ -3,7 +3,7 @@
   background-position: center;
   padding: 150px 0;
   height: 700px;
-  background-image: image-url("background_2.png"), linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 0%, rgba(0, 0, 0, 0) 5%), linear-gradient(to top, rgba(0, 0, 0, 1.0) 0%, rgba(0, 0, 0, 0) 5%), url('background_2.png');
 
 }
 

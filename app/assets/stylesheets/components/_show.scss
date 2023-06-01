@@ -1,0 +1,16 @@
+.card-show{
+  overflow: hidden;
+    background: #e9ecef;
+    border-radius: 30px;
+    width: 600px;
+    height: 500px;
+    box-shadow: 10px 10px 10px #363637;
+}
+.card-show > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card-show_body{
+  box-shadow: 10px 10px 10px #363637;
+}

@@ -1,13 +1,11 @@
 <div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
-  <div class="card-product ">
+  <div class="card-show ">
     <%= cl_image_tag @part.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
  <div class="card shadow-lg">
-  <div class="card-body">
+  <div class="card-body card-show_body">
     <h2 class="card-title"><%= @part.name %></h2>
-    <p class="card-text">Product description:</p>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong>Name:</strong> <%= @part.name %></li>
       <li class="list-group-item"><strong>Category:</strong> <%= @part.category %></li>
       <li class="list-group-item"><strong>Origin:</strong> <%= @part.origin %></li>
       <li class="list-group-item"><strong>Years:</strong> <%= @part.years %></li>
