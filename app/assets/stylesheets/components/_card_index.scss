@@ -1,0 +1,33 @@
+.card-product{
+  overflow: hidden;
+  background: white;
+  border-radius: 4px;
+}
+.card-product:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: 0.5ms;
+}
+.card-product > img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+.card-product-infos {
+  width: 100%;
+  background: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+  p {
+    font-size: 14px;
+    opacity: .7;
+  }
+  .price {
+    font-size: 18px;
+  }
+
+}
