@@ -1,16 +1,13 @@
-<%= render "shared/navbar" %>
 <%# <%= stylesheet_link_tag 'card'%>
 <%= simple_form_for @part do |f| %>
 <div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
-  <div class="card-product">
-  <%= f.input :photo, as: :file, class: "img-input"%>
-  <%# <%= f.input :photo, as: :image_preview, input_html: {preview_version: :thumb} %> %>
-  <%# <%= f.input :some_attachment_field, as: :attachment_preview %> %>
-
+  <div>
+  <ul>
+    <li class="list-group-item"><strong>Photo:</strong>  <%= f.input :photo, as: :file, class: "img-input", label: false %></li>
+    <%# <%= f.input :photo, as: :image_preview, input_html: {preview_version: :thumb} %>
+    <%# <%= f.input :some_attachment_field, as: :attachment_preview %>
+  </ul>
   </div>
-
-
-
 
  <div class="card shadow-lg">
   <div class="card-body">
@@ -21,20 +18,14 @@
       <li class="list-group-item"><strong>Years:</strong> <%= @part.years %> <%= f.input :years, label: false %></li>
       <li class="list-group-item"><strong>Description:</strong> <%= @part.description %> <%= f.input :description, label: false %></li>
       <li class="list-group-item"><strong>Price:</strong> <%= @part.price %> <%= f.input :price, label: false %></li>
-
-
     </ul>
   </div>
 </div>
 
 </div>
 
-</div>
-
-
-
 <div class="d-flex justify-content-center gap-3" >
   <p><%= link_to "back", parts_path, class:'btn btn-primary btn-sm'%></p>
   <p> <%= f.button :submit, class:'btn btn-primary btn-sm' %> </p>
 </div>
-        <% end %>
+<% end %>
