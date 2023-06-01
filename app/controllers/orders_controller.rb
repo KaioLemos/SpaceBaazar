@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
     def index
-        @orders = policy_scope(current_user.orders)
-        authorize @orders
+        @orders = current_user.orders
     end
     def create
         @order = Order.new(order_params)

@@ -77,6 +77,5 @@ group :test do
   gem "webdrivers"
 end
 
-gem "pundit"
 gem 'simple_form_fancy_uploads'
 gem 'carrierwave'

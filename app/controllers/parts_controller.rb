@@ -2,7 +2,7 @@ class PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
 
   def new
-    @part = policy_scope(Part.new)
+    @part = Part.new
   end
 
   def create
@@ -16,12 +16,8 @@ class PartsController < ApplicationController
     end
   end
 
-  # def index
-  #   @parts = policy_scope(Part)
-  # end
     def index
-      @parts = policy_scope(Part.where(completed: false))
-      authorize @parts
+      @parts = Part.where(completed: false)
     end
 
   def show
