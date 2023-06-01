@@ -1,0 +1,32 @@
+
+<div class="container mt-5">
+  <div class="card card-image my-card-image mt-5" >
+      <div class="text-white my-auto">
+        <h1 class="zindex-popover"><strong>My parts</strong></h1>
+      </div>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="cards-wrapper">
+    <% @parts.each do |part| %>
+      <div class="card-listing">
+        <div class="card-product">
+          <% if part.photo.present? %>
+            <%= cl_image_tag part.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag 'space_baazar.png', height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <%= link_to "Details", part_path(part), class: "btn-cards btn btn-outline-secondary mt-3" %>
+        </div>
+        <div class="d-flex justify-content-between align-items-center position-relative">
+          <div class="card-product-infos">
+            <h2><%= part.name %></h2>
+            <span class="price">$ <%= part.price %></span>
+          </div>
+          <img class="avatar-card avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="card card-image my-card-image my-5" >
+      <div class="text-white my-auto">
+        <h1 class="zindex-popover"><strong>My orders</strong></h1>
+      </div>
+  </div>
+
+  <table class="table table-striped shadow-lg">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Part</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.user.name %></td>
+          <td><%= order.part.name %></td>
+
+          <td>
+            <%= link_to "Show", part_path(order.part), class: "btn btn-primary" %>
+            <%= link_to "Remove", order_path(order), data: {turbo_method: :delete}, class: "btn btn-primary" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+<div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
+  <div class="card-show ">
+    <%= cl_image_tag @part.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+ <div class="card  card-fundo-description card-shadow-lg">
+  <div class="card-body card-show_body">
+    <h2 class="card-title"><%= @part.name %></h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Category:</strong> <%= @part.category %></li>
+      <li class="list-group-item"><strong>Origin:</strong> <%= @part.origin %></li>
+      <li class="list-group-item"><strong>Years:</strong> <%= @part.years %></li>
+      <li class="list-group-item"><strong>Description:</strong> <%= @part.description %></li>
+      <li class="list-group-item"><strong>Price:</strong> <%= @part.price %></li>
+      <% if @part.completed %>
+        <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> <strong>Completed:</strong> Sold</li>
+      <% else %>
+        <li class="list-group-item"><i class="fas fa-times-circle text-danger"></i> <strong>Completed:</strong> Not sold</li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="d-flex justify-content-center gap-3" >
+  <p><%= link_to "back", root_path, class:'btn btn-primary btn-sm'%></p>
+  <p><%= link_to "Edit", edit_part_path(@part), class:'btn btn-primary btn-sm'%></p>
+  <% if @part.completed || @part.user == current_user %>
+    <%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-primary btn-sm", remote: true, disabled: true %>
+  <% else %>
+    <%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-outline-secondary btn-show btn-sm", remote: true %>
+  <% end %>
+</div>

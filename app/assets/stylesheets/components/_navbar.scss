@@ -1,0 +1,57 @@
+.navbar-brand {
+  width: 140px;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: transparent;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: 1s ease-in-out;
+}
+
+.navbar-lewagon.scrolled {
+  background-image: image-url("background_5.jpg");
+}
+
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.nav-item {
+  margin: 10px 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav-link::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: rgb(0, 39, 167);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.nav-link:hover::after{
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
