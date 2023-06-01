@@ -20,6 +20,10 @@ class PartsController < ApplicationController
       @parts = Part.where(completed: false)
     end
 
+    def my_parts
+      @parts = Part.where(user: current_user)
+    end
+
   def show
 
   end
