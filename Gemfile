@@ -78,3 +78,5 @@ group :test do
 end
 
 gem "pundit"
+gem 'simple_form_fancy_uploads'
+gem 'carrierwave'
