@@ -43,7 +43,6 @@ class PartsController < ApplicationController
   end
 
   def destroy
-
   end
 
   private
