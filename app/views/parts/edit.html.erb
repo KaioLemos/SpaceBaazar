@@ -4,7 +4,7 @@
     <div class="card-product">
       <%= simple_form_for @part do |f| %>
         <%= cl_image_tag @part.photo.key, height: 400, width: 600, crop: :fill %>
-      
+
         <div class="card shadow-lg">
           <div class="card-body">
             <h2 class="card-title">Editing <%= @part.name %></h2>
@@ -21,7 +21,6 @@
             </ul>
           </div>
         </div>
-
       <% end %>
     </div>
   </div>
@@ -29,4 +28,4 @@
     <p><%= link_to "Back", root_path, class: "btn btn-primary btn-sm" %></p>
   </div>
 </div>
-<%= render "shared/footer" %>
+
