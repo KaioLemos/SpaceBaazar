@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div id="navbar-lewagon" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <div class="footer-logo">
@@ -36,3 +36,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  window.addEventListener("scroll", function() {
+  var navbar = document.getElementById("navbar-lewagon");
+  if (window.pageYOffset > 0) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+  });
+</script>
