@@ -52,3 +52,23 @@
   }
 }
 
+.my-card-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("card.png");
+  background-size: cover;
+  background-position: left;
+  height: 200px;
+  width: 100%;
+}
+
+.text-white {
+  padding-left: 100px;
+}
+
+.card {
+  border-radius: 5px;
+}
+
+.table {
+  border-radius: 5px;
+  background-color: white;
+}

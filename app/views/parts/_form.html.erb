@@ -1,12 +1,12 @@
 <%# <%= stylesheet_link_tag 'card'%>
 <%= simple_form_for @part do |f| %>
 <div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
-  <div>
-  <ul>
+  <div class="card shadow-lg">
+  <div class="card-body">
     <li class="list-group-item"><strong>Photo:</strong>  <%= f.input :photo, as: :file, class: "img-input", label: false %></li>
     <%# <%= f.input :photo, as: :image_preview, input_html: {preview_version: :thumb} %>
     <%# <%= f.input :some_attachment_field, as: :attachment_preview %>
-  </ul>
+  </div>
   </div>
 
  <div class="card shadow-lg">
