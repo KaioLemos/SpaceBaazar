@@ -1,19 +1,21 @@
-#header {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-// .container{
-//   padding: 10px 10%;
-// }
-
 .navbar-brand {
   width: 140px;
 }
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(0, 0, 0);
-  // margin-bottom: 25px;
+  background-color: transparent;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: 1s ease-in-out;
 }
+
+.navbar-lewagon.scrolled {
+  background-image: image-url("background_5.jpg");
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -52,3 +54,4 @@
 .nav-link:hover {
   color: #fff;
 }
+
