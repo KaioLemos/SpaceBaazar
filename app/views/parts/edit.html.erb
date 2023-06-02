@@ -1,13 +1,13 @@
 <div class="container-fluid text-black p-5">
   <div class="container mt-100 d-flex flex-row justify-content-around align-items-center">
-    <div class="card-product">
+    <div class="card-product card-product-edit">
       <%= simple_form_for @part do |f| %>
-        <%= cl_image_tag @part.photo.key, height: 400, width: 600, crop: :fill %>
-
-        <div class="card shadow-lg">
-          <div class="card-body">
+      <>
+       <img <%= cl_image_tag @part.photo.key, height: 400, width: 600, crop: :fill %>>
+        <div class="card ">
+          <div class="card-body card-edit">
             <h2 class="card-title">Editing <%= @part.name %></h2>
-            <p class="card-text">Product description: <%= @part.description %></p>
+            <p class="card-text">Product description:</p>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Name:</strong> <%= f.input :name, label: false%></li>
               <li class="list-group-item"><strong>Category:</strong> <%= f.input :category, label: false, collection: ['Rocket Engine', 'Navigation System', 'Fuel Tank', 'Communication Antenna', 'Life Support System', 'Hull Plating', 'Space Suits', 'Cargo Bay', 'Control Console', 'Thrusters'] %></li>
