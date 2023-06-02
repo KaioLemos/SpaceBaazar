@@ -38,7 +38,8 @@
   <p><%= link_to "back", root_path, class:'btn btn-primary btn-sm'%></p>
   <p><%= link_to "Edit", edit_part_path(@part), class:'btn btn-primary btn-sm'%></p>
   <% if @part.completed || @part.user == current_user %>
-    <%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-primary btn-sm", remote: true, disabled: true %>
+    <%= link_to "Delete", part_path(@part), data: {turbo_method: :delete, turbo_confirm: 'Você tem certeza?'}, class: "btn-delete text-decoration-none"%>
+   <i class="fa-solid fa-trash-can"></i></i>
   <% else %>
     <%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: "btn btn-outline-secondary btn-show btn-sm", remote: true %>
   <% end %>
