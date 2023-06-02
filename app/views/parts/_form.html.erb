@@ -1,7 +1,7 @@
 <%# <%= stylesheet_link_tag 'card'%>
 <%= simple_form_for @part do |f| %>
 <div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
-  <div class="card shadow-lg">
+  <div class="card card-border">
   <div class="card-body">
     <li class="list-group-item"><strong>Photo:</strong>  <%= f.input :photo, as: :file, class: "img-input", label: false %></li>
     <%# <%= f.input :photo, as: :image_preview, input_html: {preview_version: :thumb} %>
@@ -9,7 +9,7 @@
   </div>
   </div>
 
- <div class="card shadow-lg">
+ <div class="card card-border">
   <div class="card-body">
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><strong>Name:</strong> <%= @part.name %> <%= f.input :name, label: false %></li>
