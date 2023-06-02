@@ -11,16 +11,21 @@ class OrdersController < ApplicationController
     def create
       @order = Order.new(order_params)
       @part = @order.part
-      if @order.save && @order.user.where.not(user: current_user)
+      if @order.save
         @part.completed = true
         @part.save
         redirect_to orders_path
       else
-        redirect_to part_path(@part)
+        redirect_to orders_path
       end
     end
     def show
         @order = Order.find(params[:id])
+    end
+
+    def destroy
+      @order = Order.find(params[:id])
+      @order.destroy
     end
 
     private

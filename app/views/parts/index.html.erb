@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="container">
-    <h1>SPACE BAAZAR your first choice in <strong>Space Parts</strong>!</h1>
+    <h1><span class="text-space">SPACE BAAZAR</span> your first choice in <strong>Space Parts</strong>!</h1>
     <p>Discover an universe of options</p>
     <a class="btn btn-flat" href="#">Create your account</a>
   </div>
@@ -23,7 +23,11 @@
             <h2><%= part.name %></h2>
             <span class="price">$ <%= part.price %></span>
           </div>
-          <img class="avatar-card avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+            <% if part.user.photo.attached? %>
+              <%= cl_image_tag part.user.photo.key, class: "avatar-card avatar", alt: "avatar-large" %>
+            <% else %>
+              <img class="avatar-card avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+            <% end %>
         </div>
       </div>
     <% end %>

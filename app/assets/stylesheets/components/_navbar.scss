@@ -40,7 +40,7 @@
   content: '';
   width: 0;
   height: 3px;
-  background: rgb(0, 39, 167);
+  background: rgb(253, 254, 255);
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -55,3 +55,14 @@
   color: #fff;
 }
 
+.container-fluid{
+  background-image: image-url("logo1.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 25px center;
+}
+
+.avatar {
+  box-shadow: 0 0  20px #00ff0d;
+  border: 2px solid #60bb54;
+}

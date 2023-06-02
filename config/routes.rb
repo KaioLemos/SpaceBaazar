@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       get :my_parts
     end
   end
-  resources :orders, only: [:index, :new, :create, :show]
-  
+  resources :orders, only: [:index, :new, :create, :show, :destroy]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"

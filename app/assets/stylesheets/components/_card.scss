@@ -60,12 +60,18 @@
   width: 100%;
 }
 
+.card-show-size {
+  size: cover;
+  max-height: 100%;
+  width: 100%;
+}
+
 .text-white {
   padding-left: 100px;
 }
 
 .card {
-  border-radius: 5px;
+  border-radius: 13px;
 }
 
 .table {
