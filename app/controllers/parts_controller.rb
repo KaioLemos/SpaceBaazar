@@ -43,7 +43,13 @@ class PartsController < ApplicationController
   end
 
   def destroy
+    @part = Part.find(params[:id])
+    if @part.user == current_user && !@part.completed
+      @part.destroy
+    end
+    redirect_to parts_path
   end
+
 
   private
 
