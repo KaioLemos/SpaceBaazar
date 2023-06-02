@@ -8,21 +8,24 @@
   <table class="table table-striped shadow-lg">
     <thead>
       <tr>
-        <th>User</th>
         <th>Part</th>
+        <th>Category</th>
+        <th>Seller</th>
         <th>Actions</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td><%= order.user.name %></td>
           <td><%= order.part.name %></td>
-
+          <td><%= order.part.category %></td>
+          <td><%= order.part.user.name %></td>
           <td>
             <%= link_to "Show", part_path(order.part), class: "btn btn-primary" %>
             <%= link_to "Remove", order_path(order), data: {turbo_method: :delete}, class: "btn btn-primary" %>
           </td>
+          <td>$<%= order.part.price %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,7 +1,13 @@
-<div class="container p-5 mt-100 d-flex flex-row justify-content-around align-items-center">
-  <div class="card-show ">
-    <%= cl_image_tag @part.photo.key, height: 300, width: 400, crop: :fill %>
+
+<div class="container p-5 mt-5 d-flex flex-row justify-content-center align-items-center">
+  <div class="card-show m-5">
+    <% if @part.photo.key.present?%>
+      <%= cl_image_tag @part.photo.key %>
+    <% else %>
+       <%= image_tag 'space_baazar.png' %>
+    <% end %>
   </div>
+
  <div class="card  card-fundo-description card-shadow-lg">
   <div class="card-body card-show_body">
     <h2 class="card-title"><%= @part.name %></h2>
@@ -10,7 +16,9 @@
       <li class="list-group-item"><strong>Origin:</strong> <%= @part.origin %></li>
       <li class="list-group-item"><strong>Years:</strong> <%= @part.years %></li>
       <li class="list-group-item"><strong>Description:</strong> <%= @part.description %></li>
-      <li class="list-group-item"><strong>Price:</strong> <%= @part.price %></li>
+      <li class="list-group-item"><strong>Price:</strong> $<%= @part.price %></li>
+      <li class="list-group-item"><strong>Seller:</strong> <%= @part.user.name %></li>
+
       <% if @part.completed %>
         <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> <strong>Completed:</strong> Sold</li>
       <% else %>

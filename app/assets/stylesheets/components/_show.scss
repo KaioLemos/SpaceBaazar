@@ -2,8 +2,8 @@
   overflow: hidden;
     background: #e9ecef;
     border-radius: 10px;
-    width: 600px;
-    height: 500px;
+    max-width: 600px;
+    max-height: 500px;
     box-shadow: 10px 10px 10px #af21b9;
 }
 .card-show > img {
