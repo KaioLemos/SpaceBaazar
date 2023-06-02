@@ -23,7 +23,6 @@
           <td><%= order.part.user.name %></td>
           <td>
             <%= link_to "Show", part_path(order.part), class: "btn-page" %>
-            <%= link_to "Remove", order_path(order), data: {turbo_method: :delete}, class: "btn-page" %>
           </td>
           <td>$<%= order.part.price %></td>
         </tr>

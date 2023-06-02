@@ -2,10 +2,9 @@
   <div class="container">
     <h1><span class="text-space">SPACE BAAZAR</span> your first choice in <strong>Space Parts</strong>!</h1>
     <p>Discover an universe of options</p>
-    <a class="btn-page btn-banner" href="#">Create your account</a>
   </div>
     <% if !user_signed_in? %>
-      <%= link_to "Create your account", new_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Create your account", new_user_registration_path, class: "btn-page btn-banner btn-banner-page" %>
     <% end %>  </div>
 </div>
 
