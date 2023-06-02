@@ -1,8 +1,8 @@
-<div class="container-fluid text-black p-5">
+<div class="container-fluid text-black mt-5 p-5">
   <div class="container mt-100 d-flex flex-row justify-content-around align-items-center">
     <div class="card-product card-product-edit">
       <%= simple_form_for @part do |f| %>
-      <>
+
        <img <%= cl_image_tag @part.photo.key, height: 400, width: 600, crop: :fill %>>
         <div class="card ">
           <div class="card-body card-edit">
