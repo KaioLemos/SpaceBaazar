@@ -24,7 +24,7 @@
             <h2><%= part.name %></h2>
             <span class="price">$ <%= part.price %></span>
           </div>
-          <img class="avatar-card avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          <%= cl_image_tag part.user.photo.key, class: "avatar-card avatar", alt: "avatar-large" %>
         </div>
       </div>
     <% end %>
