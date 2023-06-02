@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
     def index
         @orders = current_user.orders
     end
@@ -33,5 +32,4 @@ class OrdersController < ApplicationController
     def order_params
         params.require(:order).permit(:user_id, :part_id, :completed)
     end
-
 end
