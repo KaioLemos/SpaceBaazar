@@ -41,6 +41,6 @@
     <p><%= link_to "Delete", part_path(@part), data: {turbo_method: :delete}, class: 'btn-page'%></p>
   <% end %>
   <% if !@part.completed && @part.user != current_user %>
-    <p><%= link_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: 'btn-page', remote: true %></p>
+    <p><%= button_to "Order Now", orders_path(order: { user_id: current_user.id, part_id: @part.id }), method: :post, class: 'btn-page btn-page-2', remote: true %></p>
   <% end %>
 </div>
