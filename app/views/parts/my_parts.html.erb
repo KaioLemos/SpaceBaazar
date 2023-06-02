@@ -1,6 +1,6 @@
 
 <div class="container mt-5">
-  <div class="card card-image my-card-image mt-5" >
+  <div class="card card-image my-card-image3 mt-5" >
       <div class="text-white my-auto">
         <h1 class="zindex-popover"><strong>My parts</strong></h1>
       </div>
@@ -24,7 +24,7 @@
             <h2><%= part.name %></h2>
             <span class="price">$ <%= part.price %></span>
           </div>
-          <img class="avatar-card avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          <%= cl_image_tag part.user.photo.key, class: "avatar-card avatar", alt: "avatar-large" %>
         </div>
       </div>
     <% end %>

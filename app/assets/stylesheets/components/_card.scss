@@ -53,9 +53,25 @@
 }
 
 .my-card-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("card.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("ezgif.com-resize.webp");
   background-size: cover;
-  background-position: left;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+}
+
+.my-card-image2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("1223604.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+}
+
+.my-card-image3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("ezgif.com-gif-maker.webp");
+  background-size: cover;
+  background-position-y: 30%;
   height: 200px;
   width: 100%;
 }
